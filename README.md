@@ -1,4 +1,4 @@
-# gltfextract — glTF/GLB → baked JSON (skinned + animated)
+# gltfextract - glTF/GLB → baked JSON (skinned + animated)
 
 **One‑file extractor that bakes skinned glTF/GLB into integer‑quantized JSON frames** (keeps vertex order, stitches clips, samples colors, and includes skeleton + weights). Ships with a tiny Tk GUI and a CLI.
 
@@ -26,7 +26,7 @@ python gltfextract.py
 ## Features
 
 * **Correct hierarchical skinning.** Per‑frame `jointMatrices = worldAnimated(joint) * inverseBindMatrix[j]`, then CPU‑reskins vertices and optionally applies the mesh node’s world transform.
-* **Vertex order preserved.** No reindexing — indices map straight to your runtime.
+* **Vertex order preserved.** No reindexing - indices map straight to your runtime.
 * **Clip stitching + metadata.** Concatenates animation channels into a global timeline and exports `animationClips` with `startFrame/endFrame/durationSeconds/fps`.
 * **Color sampling.** Uses vertex colors if present; otherwise samples PBR base‑color (factor/texture), falling back to a neutral color when textures are unavailable. Optional Pillow support for texture reads.
 * **Output tailored for game runtimes.** Integer‑quantized per‑frame arrays `vx/vy/vz`, face lists, and legacy `baseX/framesX` style arrays for drop‑in use.
@@ -42,7 +42,7 @@ python gltfextract.py
 * Optional: **Pillow** (`pip install pillow`) for texture sampling in color baking
 * Tkinter is included with most Python builds (used for the GUI)
 
-No packaging required — it’s a single file. Add to your project or run it standalone.
+No packaging required, it’s a single file. Add to your project or run it standalone.
 
 ---
 
